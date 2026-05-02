@@ -70,8 +70,23 @@ function toggleFaq(btn) {
   if (!was) item.classList.add('open');
 }
 
+// ── Mobile menu ──
+function toggleMenu() {
+  const btn = document.getElementById('burgerBtn');
+  const nav = document.getElementById('mobileNav');
+  const isOpen = nav.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+
 // ── Keyboard ──
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQuiz(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeQuiz();
+    const nav = document.getElementById('mobileNav');
+    if (nav && nav.classList.contains('open')) toggleMenu();
+  }
+});
 
 // ── Header shadow on scroll ──
 window.addEventListener('scroll', () => {
