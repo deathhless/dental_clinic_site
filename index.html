@@ -1,0 +1,551 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Стоматологическая клиника — Лечение и имплантация зубов в Москве</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="site-header">
+  <div class="header-logo">Denta<span>Plus</span></div>
+  <nav class="header-nav">
+    <a href="#why">Почему мы</a>
+    <a href="#doctors">Врачи</a>
+    <a href="#steps">Как лечим</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <a href="tel:84951492137" class="header-phone">
+    <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 12a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.3h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.1a16 16 0 006.29 6.29l1.06-1.06a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></span>
+    8 495 149-21-37
+  </a>
+  <button class="header-cta" onclick="openQuiz()">Записаться</button>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section style="background:linear-gradient(160deg,#EDF7EC 0%,#F5F7F4 50%,#EEF1EC 100%);padding:140px 48px 80px;position:relative;overflow:hidden;" id="home">
+  <div style="position:absolute;right:-80px;top:-80px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(91,168,88,.08) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;left:-100px;bottom:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(44,24,8,.04) 0%,transparent 70%);pointer-events:none;"></div>
+
+  <div style="position:relative;z-index:1;">
+    <div class="hero-inner">
+
+    <!-- весь текст + фото в одном flex-ряду -->
+    <div class="hero-row">
+
+      <!-- ЛЕВАЯ КОЛОНКА: весь текст -->
+      <div class="hero-row-text">
+
+        <h1 class="hero-h1" style="margin-bottom:18px;">
+          <span class="hero-h1-green">Лечение и имплантация зубов</span>
+<h1 class="hero-title">
+  <span class="hero-h1-dark">под ключ</span>
+  <span class="hero-h1-dark-green">за 1 день</span>
+  <span class="hero-h1-dark">в Москве.</span>
+</h1>          <span class="hero-h1-small">Недорого, но очень качественно.</span>
+        </h1>
+
+        <p style="font-size:clamp(.95rem,1.5vw,1.07rem);color:var(--muted);margin-bottom:20px;line-height:1.72;">
+          Вернем вам полноценную улыбку без боли,<br>с гарантией до 5 лет и рассрочкой 0%
+        </p>
+
+        <div class="hero-offer" style="margin-bottom:24px;">
+          <span class="icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></span>
+          Бесплатная консультация + КТ — экономия 5 000 ₽
+        </div>
+
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;">
+          <button class="btn-primary" onclick="openQuiz()">
+            Рассчитать стоимость лечения
+            <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </button>
+          <div style="font-size:.82rem;color:var(--muted);display:flex;align-items:center;gap:7px;">
+            <span class="icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+            Оставьте телефон — врач свяжется в течение 5 минут
+          </div>
+        </div>
+      </div>
+
+      <!-- ПРАВАЯ КОЛОНКА: фото -->
+      <div class="hero-photo">
+        <img src="hero.jpg" alt="Лечение зубов">
+      </div>
+
+    </div>
+
+    <!-- триггеры центрированы -->
+    <div class="hero-stats-wrap">
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div><div class="stat-val">12 000+</div><div class="stat-lbl">довольных пациентов</div></div>
+        </div>
+        <div class="hero-stat">
+          <div class="icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"><path d="M196 64c-30 0-60 10-82 32-44 44-44 116 0 160 18 18 28 42 30 68l10 108c2 18 16 32 34 32s32-14 34-32l6-68c2-20 18-36 38-36s36 16 38 36l6 68c2 18 16 32 34 32s32-14 34-32l10-108c2-26 12-50 30-68 44-44 44-116 0-160-22-22-52-32-82-32-24 0-46 8-64 22-18-14-40-22-64-22z"/><path d="M152 120 l12-38 12 38 38 12-38 12-12 38-12-38-38-12z"/></svg>
+          </div>
+          <div><div class="stat-val">10–20 лет</div><div class="stat-lbl">опыт врачей</div></div>
+        </div>
+        <div class="hero-stat">
+          <div class="icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div><div class="stat-val">5 лет</div><div class="stat-lbl">гарантия на работу</div></div>
+        </div>
+      </div>
+    </div>
+
+    </div><!-- /hero-inner -->
+  </div>
+</section>
+
+<!-- ═══ WHY US ═══ -->
+<section class="s-gray" id="why">
+  <div class="section-wrap" style="padding-top:52px;">
+    <h2 class="section-title" style="margin-bottom:8px;">Почему пациенты выбирают именно нас</h2>
+    <p class="section-sub" style="margin-bottom:36px;max-width:100%;">Мы не просто лечим зубы — мы восстанавливаем качество жизни.</p>
+    <div class="utp-grid">
+      <div class="utp-card">
+        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="9" x2="5" y2="9"/><line x1="1" y1="12" x2="5" y2="12"/><line x1="2" y1="15" x2="5" y2="15"/><circle cx="14" cy="12" r="8"/><polyline points="14 8 14 12 17 13"/></svg></div>
+        <h3>Имплантация за 1 день</h3>
+        <p>Уходите с новыми зубами сразу — без многомесячного ожидания.</p>
+      </div>
+      <div class="utp-card">
+        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <h3>Без боли</h3>
+        <p>Современные методы анестезии — вы полностью расслаблены и комфортны.</p>
+      </div>
+      <div class="utp-card">
+        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"><rect x="80" y="462" width="300" height="38" rx="19"/><line x1="210" y1="462" x2="210" y2="340"/><line x1="148" y1="340" x2="92" y2="432"/><rect x="140" y="278" width="232" height="66" rx="22"/><rect x="318" y="108" width="60" height="188" rx="22"/><path d="M308 88 Q308 52 348 52 Q390 52 390 88 L390 116 Q390 128 378 128 L318 128 Q308 128 308 116 Z"/><path d="M378 116 Q428 108 440 54"/><path d="M418 20 Q462 16 458 58 Q454 82 424 76 Q402 70 418 20"/><path d="M318 278 Q318 250 352 246 L392 246"/><path d="M336 246 Q350 232 372 246"/><line x1="148" y1="278" x2="70" y2="182"/><rect x="38" y="152" width="44" height="88" rx="16" transform="rotate(-38 60 196)"/></svg></div>
+        <h3>Собственная лаборатория</h3>
+        <p>Быстрее и дешевле на 30% — всё делаем сами, без посредников.</p>
+      </div>
+      <div class="utp-card">
+        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"><path d="M256 36 L62 118 L62 270 Q62 398 256 478 Q450 398 450 270 L450 118 Z"/><polyline points="160,268 224,332 356,188"/></svg></div>
+        <h3>Гарантия до 5 лет</h3>
+        <p>Официальная письменная гарантия на все виды выполненных работ.</p>
+      </div>
+      <div class="utp-card">
+        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+        <h3>Рассрочка 0%</h3>
+        <p>Без переплат и скрытых комиссий. Платите так, как удобно вам.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROMO ═══ -->
+<section class="s-dark" id="promo">
+  <div class="section-wrap">
+    <div class="promo-grid">
+      <div>
+        <div class="promo-badge">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Скидка 30%
+        </div>
+        <p class="promo-title">на имплантацию до конца недели</p>
+        <p class="promo-intro">Оставьте заявку сейчас и получите бесплатно:</p>
+        <ul class="check-list">
+          <li>
+            <span class="icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Консультацию врача
+          </li>
+          <li>
+            <span class="icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            КТ диагностику
+          </li>
+          <li>
+            <span class="icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Персональный план лечения
+          </li>
+        </ul>
+        <div class="promo-limit">
+          <span class="icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+          Количество мест ограничено — запись ведется на ближайшие дни
+        </div>
+      </div>
+      <div class="form-card">
+        <h3>Получить скидку 30%</h3>
+        <form onsubmit="submitPromo(event)">
+          <div class="field"><input type="text" name="name" placeholder="Ваше имя" required></div>
+          <div class="field"><input type="tel" name="phone" placeholder="Ваш телефон" required></div>
+          <button type="submit" class="btn-submit">
+            Получить скидку
+            <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </button>
+        </form>
+        <p class="form-note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DOCTORS ═══ -->
+<section class="s-white" id="doctors">
+  <div class="section-wrap">
+    <div class="doctors-layout">
+      <div>
+        <h2 class="section-title" style="margin-bottom:16px;">Вас будут лечить врачи с опытом 10–20 лет</h2>
+        <p style="font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:0;">
+          Каждый специалист — практикующий эксперт с реальными кейсами.<br>
+          В нашей клинике собраны лучшие специалисты со всей Москвы.
+        </p>
+      </div>
+      <div class="doctors-feats">
+        <div class="doctors-feat">
+          <div class="doctors-feat-val">10–20</div>
+          <div class="doctors-feat-lbl">лет опыта у каждого врача</div>
+        </div>
+        <div class="doctors-feat">
+          <div class="doctors-feat-val">4+</div>
+          <div class="doctors-feat-lbl">узких специализации в клинике</div>
+        </div>
+        <div class="doctors-feat">
+          <div class="doctors-feat-val">100%</div>
+          <div class="doctors-feat-lbl">практикующие эксперты</div>
+        </div>
+        <div class="doctors-feat">
+          <div class="doctors-feat-val" style="font-size:1.2rem;">Лучшие<br>из Москвы</div>
+          <div class="doctors-feat-lbl" style="margin-top:6px;">строгий отбор специалистов</div>
+        </div>
+      </div>
+    </div>
+    <div class="doctor-note" style="margin-top:40px;justify-content:center;text-align:center;">
+      <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      Мы подбираем врача под вашу задачу, а не «назначаем свободного»
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STEPS ═══ -->
+<section class="s-gray" id="steps">
+  <div class="section-wrap">
+    <h2 class="section-title" style="margin-bottom:40px;">Как проходит лечение — просто и понятно</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 12a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.3h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.1a16 16 0 006.29 6.29l1.06-1.06a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <h3>Оставляете заявку</h3>
+        <p>Врач перезвонит в течение 5 минут</p>
+      </div>
+      <div class="step">
+        <div class="step-num">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3>Бесплатная диагностика</h3>
+        <p>КТ + консультация бесплатно</p>
+      </div>
+      <div class="step">
+        <div class="step-num">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        </div>
+        <h3>Точный план</h3>
+        <p>Стоимость и сроки заранее</p>
+      </div>
+      <div class="step">
+        <div class="step-num">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3>Проводим лечение</h3>
+        <p>Комфортно и безболезненно</p>
+      </div>
+      <div class="step">
+        <div class="step-num">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Контроль результата</h3>
+        <p>Наблюдение после лечения</p>
+      </div>
+    </div>
+    <div class="steps-note">
+      <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      Вы заранее знаете сроки, стоимость и результат — никаких сюрпризов
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="s-white" id="faq">
+  <div class="section-wrap">
+    <h2 class="section-title" style="margin-bottom:36px;">Часто задаваемые вопросы</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Больно ли делать имплантацию?
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-ans">Нет. Мы используем современную анестезию — вы не почувствуете боли во время процедуры. После — минимальный дискомфорт, который легко снимается рекомендованными препаратами.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Сколько длится лечение?
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-ans">В некоторых случаях — всего 1 день. Точные сроки зависят от клинической ситуации — мы определяем их на бесплатной диагностике и сообщаем заранее.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Есть ли гарантия?
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-ans">Да, официальная письменная гарантия до 5 лет на все выполненные работы. Если что-то пойдёт не так — устраним бесплатно.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Можно ли оплатить в рассрочку?
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-ans">Да, доступна рассрочка 0% без переплат и скрытых комиссий. Партнёрские программы с ведущими банками. Подберём удобный срок и платёж под ваш бюджет.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACTS ═══ -->
+<section class="s-gray" id="contacts">
+  <div style="padding:88px 48px;max-width:none;">
+    <div class="contacts-grid" style="max-width:1200px;margin:0 auto;">
+      <div>
+        <h2 class="section-title">Ждем вас в нашей клинике в Москве</h2>
+        <p style="color:var(--muted);margin-bottom:32px;line-height:1.7;">Удобное расположение рядом с метро. Работаем ежедневно.</p>
+        <div class="contact-row">
+          <div class="contact-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-lbl">Адрес</div>
+            <div class="contact-val">г. Москва, ул. Кутузова, д. 11, корп. 2</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 12a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.3h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.1a16 16 0 006.29 6.29l1.06-1.06a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-lbl">Телефон</div>
+            <div class="contact-val"><a href="tel:84951492137">8 495 149-21-37</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="contact-lbl">Режим работы</div>
+            <div class="contact-val">Ежедневно: 9:00 — 21:00</div>
+          </div>
+        </div>
+        <button class="btn-primary" style="margin-top:12px;" onclick="openQuiz()">
+          Записаться на удобное время
+          <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </button>
+      </div>
+      <div>
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D1%83%D0%BB.%20%D0%9A%D1%83%D1%82%D1%83%D0%B7%D0%BE%D0%B2%D0%B0%2C%20%D0%B4.%2011%2C%20%D0%BA%D0%BE%D1%80%D0%BF.%202&z=16&l=map"
+          width="100%" height="400" frameborder="0"
+          style="border-radius:14px;display:block;border:1px solid var(--border);"
+          allowfullscreen loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<div class="final-cta-wrap">
+  <div class="alert-badge">
+    <span class="icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+    Важно знать
+  </div>
+  <h2>Не откладывайте лечение —<br>это только увеличит стоимость</h2>
+  <p>Чем раньше начать, тем проще и дешевле решение.<br>Запишитесь сегодня — первый шаг бесплатный.</p>
+  <button class="btn-primary" style="font-size:1rem;padding:16px 36px;margin:0 auto;" onclick="openQuiz()">
+    Записаться на консультацию
+    <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+  </button>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Denta<span>Plus</span></div>
+      <p class="footer-tagline">Хотите обрести красивую<br>и здоровую улыбку?<br>Обращайтесь, будем рады помочь!</p>
+      <div class="footer-contacts">
+        <div>ул. Кутузова, д. 11 к 2</div>
+        <div><a href="tel:84951492137">8 (495) 149-21-37</a></div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Информация</div>
+      <a href="#promo">Акции и скидки</a>
+      <a href="#home">Правовая информация</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Услуги</div>
+      <a href="#why">Удаление зубов</a>
+      <a href="#why">Протезирование</a>
+      <a href="#promo">Имплантация</a>
+      <a href="#why">Ортодонтия</a>
+      <a href="#why">Детская стоматология</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">О клинике</div>
+      <a href="#home" onclick="event.preventDefault();openQuiz()">Запись на прием</a>
+      <a href="#doctors">Наши врачи</a>
+      <a href="#promo">Услуги и цены</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-legal">© 2026 DentaPlus. Лицензия на мед. деятельность №ЛО-77-01-XXXXXX</p>
+    <a href="#home" class="footer-up">
+      Наверх
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+    </a>
+  </div>
+</footer>
+
+<!-- ═══ FLOATING BUTTON ═══ -->
+<button class="float-cta" onclick="openQuiz()">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+  Рассчитать стоимость
+</button>
+
+<!-- ═══ QUIZ MODAL ═══ -->
+<div class="modal-overlay" id="modal" onclick="handleBg(event)">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>Узнайте стоимость лечения за 1 минуту</h3>
+      <p>Ответьте на 4 вопроса и получите персональный расчёт + скидку</p>
+      <button class="modal-close" onclick="closeQuiz()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="quiz-prog" id="qprog">
+        <div class="quiz-prog-bar" id="pb1"></div>
+        <div class="quiz-prog-bar" id="pb2"></div>
+        <div class="quiz-prog-bar" id="pb3"></div>
+        <div class="quiz-prog-bar" id="pb4"></div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="quiz-step active" id="qs1">
+        <p class="quiz-q">Что вас беспокоит?</p>
+        <div class="quiz-opts">
+          <button class="quiz-opt" onclick="pick(this,1)"><span class="radio"></span>Нужна имплантация (1 или несколько зубов)</button>
+          <button class="quiz-opt" onclick="pick(this,1)"><span class="radio"></span>Боль или кариес</button>
+          <button class="quiz-opt" onclick="pick(this,1)"><span class="radio"></span>Протезирование / коронки</button>
+          <button class="quiz-opt" onclick="pick(this,1)"><span class="radio"></span>Эстетика / отбеливание</button>
+          <button class="quiz-opt" onclick="pick(this,1)"><span class="radio"></span>Полная замена зубов</button>
+        </div>
+        <div class="quiz-nav">
+          <button class="btn-next" id="qn1" onclick="goStep(2)">
+            Далее
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="quiz-step" id="qs2">
+        <p class="quiz-q">Сколько зубов нуждается в лечении?</p>
+        <div class="quiz-opts">
+          <button class="quiz-opt" onclick="pick(this,2)"><span class="radio"></span>1 зуб</button>
+          <button class="quiz-opt" onclick="pick(this,2)"><span class="radio"></span>2–4 зуба</button>
+          <button class="quiz-opt" onclick="pick(this,2)"><span class="radio"></span>5 и более зубов</button>
+          <button class="quiz-opt" onclick="pick(this,2)"><span class="radio"></span>Полное восстановление</button>
+        </div>
+        <div class="quiz-nav">
+          <button class="btn-next" id="qn2" onclick="goStep(3)">
+            Далее
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="quiz-step" id="qs3">
+        <p class="quiz-q">Когда хотели бы начать лечение?</p>
+        <div class="quiz-opts">
+          <button class="quiz-opt" onclick="pick(this,3)"><span class="radio"></span>Как можно скорее</button>
+          <button class="quiz-opt" onclick="pick(this,3)"><span class="radio"></span>В течение месяца</button>
+          <button class="quiz-opt" onclick="pick(this,3)"><span class="radio"></span>Пока просто узнаю цену</button>
+        </div>
+        <div class="quiz-nav">
+          <button class="btn-next" id="qn3" onclick="goStep(4)">
+            Далее
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="quiz-step" id="qs4">
+        <p class="quiz-q">Важен ли вопрос стоимости / рассрочки?</p>
+        <div class="quiz-opts">
+          <button class="quiz-opt" onclick="pick(this,4)"><span class="radio"></span>Да, нужна рассрочка</button>
+          <button class="quiz-opt" onclick="pick(this,4)"><span class="radio"></span>Хочу понять итоговую цену</button>
+          <button class="quiz-opt" onclick="pick(this,4)"><span class="radio"></span>Важно качество, цена вторична</button>
+        </div>
+        <div class="quiz-nav">
+          <button class="btn-next" id="qn4" onclick="showFinal()">
+            Получить расчёт
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Final form -->
+      <div class="quiz-step" id="qsFinal">
+        <p class="quiz-final-ttl">Отлично! Ваш расчёт готов</p>
+        <p class="quiz-final-sub">Оставьте номер — мы подготовим для вас:</p>
+        <ul class="perk-list">
+          <li><span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Точный расчёт стоимости</li>
+          <li><span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Персональный план лечения</li>
+          <li><span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Варианты рассрочки</li>
+        </ul>
+        <div class="discount-badge">
+          <span class="icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></span>
+          Закрепим за вами скидку до 30%
+        </div>
+        <form class="quiz-form" onsubmit="submitQuiz(event)">
+          <input type="text" name="name" placeholder="Ваше имя" required>
+          <input type="tel" name="phone" placeholder="Ваш телефон" required>
+          <button type="submit" class="btn-next enabled" style="width:100%;justify-content:center;padding:14px 20px;">
+            Получить расчёт и скидку
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <p class="quiz-privacy">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой обработки данных</a></p>
+        </form>
+      </div>
+
+      <!-- Success -->
+      <div class="quiz-step" id="qsOk">
+        <div class="success-box">
+          <div class="success-icon">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h4>Заявка принята!</h4>
+          <p>Наш врач свяжется с вами<br>в течение 5 минут.<br>Ваша скидка зафиксирована.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
