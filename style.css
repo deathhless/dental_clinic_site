@@ -748,12 +748,14 @@ section.s-dark  { background: #2c1808; color: var(--white); }
 
   /* Hero */
   #home { padding: 90px 16px 48px !important; }
-  .hero-row-text { width: 100%; }
+  .hero-row-text { width: 100%; align-items: stretch; }
   .hero-h1-green { font-size: clamp(2rem, 9.3vw, 2.5rem); font-weight: 900; white-space: normal; line-height: 1.1; margin-bottom: 20px; }
   .hero-h1-dark, .hero-h1-dark-green { font-size: clamp(.95rem, 4.5vw, 1.2rem); margin-bottom: 4px; }
-  .hero-h1-small { font-size: clamp(1rem, 4.8vw, 1.3rem); white-space: nowrap; margin-bottom: 4px; }
-  .hero-title { display: flex; flex-direction: row; flex-wrap: wrap; gap: 5px; }
+  .hero-h1-small { font-size: clamp(1rem, 4.8vw, 1.3rem); margin-bottom: 8px; }
+  .hero-title { display: flex; flex-direction: row; flex-wrap: wrap; gap: 5px; margin-bottom: 4px; }
+  .hero-body-text { font-size: .92rem !important; }
   .hero-contact-note { font-size: .67rem !important; white-space: nowrap; }
+  .hero-stats-wrap { margin-top: 24px; }
   .hero-stats { flex-direction: column; }
   .hero-stat { width: 100%; min-width: 0 !important; border-right: none; border-bottom: 1px solid var(--border); }
   .hero-stat:last-child { border-bottom: none; }
