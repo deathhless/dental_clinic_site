@@ -759,11 +759,13 @@ section.s-dark  { background: #2c1808; color: var(--white); }
 
   /* Hero */
   #home { padding: 90px 16px 48px !important; }
-  .hero-h1-green { font-size: clamp(1.4rem, 7vw, 1.9rem); }
+  .hero-h1-green { font-size: clamp(.9rem, 4.8vw, 1.2rem); white-space: nowrap; }
   .hero-h1-dark, .hero-h1-dark-green, .hero-h1-small {
-    font-size: clamp(1.1rem, 5.5vw, 1.55rem);
+    font-size: clamp(.9rem, 4.5vw, 1.15rem);
+    white-space: nowrap;
+    margin-bottom: 4px;
   }
-  .hero-title { flex-direction: column; gap: 2px; }
+  .hero-title { flex-direction: row; flex-wrap: nowrap; gap: 6px; }
   .hero-stats { flex-direction: column; }
   .hero-stat { border-right: none; border-bottom: 1px solid var(--border); }
   .hero-stat:last-child { border-bottom: none; }
