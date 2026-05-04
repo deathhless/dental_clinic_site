@@ -742,15 +742,31 @@ section.s-dark  { background: #2c1808; color: var(--white); }
 
 /* ─── RESPONSIVE: MOBILE (≤ 600px) ─── */
 @media (max-width: 600px) {
-  .site-header { padding: 0 16px; }
-  .section-wrap { padding: 48px 16px; }
 
-  /* Hero */
-  #home { padding: 90px 16px 48px !important; }
-  .hero-h1-green { font-size: clamp(1.4rem, 6vw, 1.65rem); font-weight: 900; }
-  .hero-h1-dark, .hero-h1-dark-green { font-size: clamp(1.4rem, 6.8vw, 1.8rem); margin-bottom: 4px; }
-  .hero-h1-small { font-size: clamp(1.2rem, 5.2vw, 1.4rem); margin-bottom: 4px; }
-  .hero-title { flex-direction: row; flex-wrap: wrap; gap: 5px; }
+.hero-h1-green {
+  font-size: clamp(1.9rem, 7.5vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+  .hero-title {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    line-height: 1.3;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .hero-h1-dark-green {
+    color: #4CAF50;
+    font-weight: 700;
+  }
+
+  .hero-h1-small {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+}
+  .hero-title { flex-direction: row; flex-wrap: nowrap; gap: 6px; }
   .hero-stats { flex-direction: column; }
   .hero-stat { border-right: none; border-bottom: 1px solid var(--border); }
   .hero-stat:last-child { border-bottom: none; }
@@ -775,22 +791,25 @@ section.s-dark  { background: #2c1808; color: var(--white); }
   .doctors-feat-val { font-size: 1.5rem; }
 
   /* Steps — vertical list */
-  .steps-grid { grid-template-columns: 1fr; gap: 0; }
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
   .steps-grid::before { display: none; }
   .step {
-    display: grid;
-    grid-template-columns: 52px 1fr;
-    column-gap: 16px;
-    row-gap: 3px;
+    flex-direction: row;
     align-items: center;
     text-align: left;
     padding: 20px 0;
+    gap: 16px;
     border-bottom: 1px solid var(--border);
   }
   .step:last-child { border-bottom: none; }
-  .step-num { width: 52px; height: 52px; margin-bottom: 0; grid-column: 1; grid-row: 1 / 3; align-self: center; }
-  .step h3 { grid-column: 2; grid-row: 1; align-self: end; margin-bottom: 0; }
-  .step p  { grid-column: 2; grid-row: 2; align-self: start; }
+  .step-num {
+    width: 52px; height: 52px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
   .steps-note { margin-top: 28px; font-size: .88rem; }
 
   /* FAQ */
