@@ -749,7 +749,7 @@ section.s-dark  { background: #2c1808; color: var(--white); }
   /* Hero */
   #home { padding: 90px 16px 48px !important; }
   .hero-row-text { width: 100%; }
-  .hero-h1-green { font-size: clamp(1.6rem, 7vw, 2rem); font-weight: 900; white-space: nowrap; margin-bottom: 20px; }
+  .hero-h1-green { font-size: clamp(2rem, 9.3vw, 2.5rem); font-weight: 900; white-space: normal; line-height: 1.1; margin-bottom: 20px; }
   .hero-h1-dark, .hero-h1-dark-green { font-size: clamp(.95rem, 4.5vw, 1.2rem); margin-bottom: 4px; }
   .hero-h1-small { font-size: clamp(1rem, 4.8vw, 1.3rem); white-space: nowrap; margin-bottom: 4px; }
   .hero-title { display: flex; flex-direction: row; flex-wrap: wrap; gap: 5px; }
