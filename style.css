@@ -234,7 +234,7 @@ section.s-dark  { background: #2c1808; color: var(--white); }
 .check-list li .icon svg { stroke: #6dca6a; flex-shrink: 0; }
 .promo-limit {
   display: flex; align-items: center; gap: 8px;
-  font-size: .82rem; color: rgba(255,255,255,.45);
+  font-size: .7rem; color: rgba(255,255,255,.45);
   margin-top: 8px;
 }
 .promo-limit .icon svg { stroke: rgba(255,255,255,.4); }
@@ -512,7 +512,17 @@ section.s-dark  { background: #2c1808; color: var(--white); }
 .quiz-opt:hover { border-color: var(--blue); background: var(--blue-pale); }
 .quiz-opt.sel  { border-color: var(--blue); background: var(--blue-pale); color: var(--blue); }
 .quiz-opt.sel .radio { border-color: var(--blue); background: var(--blue); box-shadow: inset 0 0 0 3px var(--white); }
-.quiz-nav { display: flex; justify-content: flex-end; margin-top: 22px; }
+.quiz-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 22px; gap: 12px; }
+.quiz-nav > .btn-next:only-child { margin-left: auto; }
+.btn-back {
+  display: flex; align-items: center; gap: 6px;
+  padding: 11px 18px; background: transparent; color: var(--muted);
+  border: 1.5px solid var(--border); border-radius: var(--r);
+  font-size: .88rem; font-weight: 600; cursor: pointer;
+  transition: color .2s, border-color .2s;
+}
+.btn-back:hover { color: var(--text); border-color: #aaa; }
+.btn-back svg { stroke: currentColor; }
 .btn-next {
   display: flex; align-items: center; gap: 7px;
   padding: 12px 26px; background: var(--blue); color: var(--white);
@@ -773,6 +783,7 @@ section.s-dark  { background: #2c1808; color: var(--white); }
   /* Promo */
   .form-card { padding: 24px 20px; }
   .promo-title { font-size: clamp(1.15rem, 6vw, 1.5rem); }
+  .promo-limit { font-size: .65rem; white-space: nowrap; }
 
   /* Doctors */
   .doctors-feats { grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -821,3 +832,12 @@ section.s-dark  { background: #2c1808; color: var(--white); }
   /* Float btn */
   .float-cta { bottom: 16px; right: 12px; font-size: .82rem; padding: 11px 16px; }
 }
+
+/* ─── SCROLL REVEAL ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.55s cubic-bezier(.25,.46,.45,.94),
+              transform 0.55s cubic-bezier(.25,.46,.45,.94);
+}
+.reveal.visible { opacity: 1; transform: none; }

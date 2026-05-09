@@ -209,13 +209,13 @@
         <h3>Получить скидку 30%</h3>
         <form onsubmit="submitPromo(event)">
           <div class="field"><input type="text" name="name" placeholder="Ваше имя" required></div>
-          <div class="field"><input type="tel" name="phone" placeholder="Ваш телефон" required></div>
+          <div class="field"><input type="tel" name="phone" placeholder="+7 (___) ___-__-__" inputmode="numeric" autocomplete="tel" required oninput="formatPhone(this)"></div>
           <button type="submit" class="btn-submit">
             Получить скидку
             <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </button>
         </form>
-        <p class="form-note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+        <p class="form-note">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой обработки персональных данных</a> и <a href="#">офертой</a></p>
       </div>
     </div>
   </div>
@@ -495,6 +495,10 @@
           <button class="quiz-opt" onclick="pick(this,2)"><span class="radio"></span>Полное восстановление</button>
         </div>
         <div class="quiz-nav">
+          <button class="btn-back" type="button" onclick="goBack()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Назад
+          </button>
           <button class="btn-next" id="qn2" onclick="goStep(3)">
             Далее
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -511,6 +515,10 @@
           <button class="quiz-opt" onclick="pick(this,3)"><span class="radio"></span>Пока просто узнаю цену</button>
         </div>
         <div class="quiz-nav">
+          <button class="btn-back" type="button" onclick="goBack()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Назад
+          </button>
           <button class="btn-next" id="qn3" onclick="goStep(4)">
             Далее
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -527,6 +535,10 @@
           <button class="quiz-opt" onclick="pick(this,4)"><span class="radio"></span>Важно качество, цена вторична</button>
         </div>
         <div class="quiz-nav">
+          <button class="btn-back" type="button" onclick="goBack()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Назад
+          </button>
           <button class="btn-next" id="qn4" onclick="showFinal()">
             Получить расчёт
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -549,12 +561,18 @@
         </div>
         <form class="quiz-form" onsubmit="submitQuiz(event)">
           <input type="text" name="name" placeholder="Ваше имя" required>
-          <input type="tel" name="phone" placeholder="Ваш телефон" required>
-          <button type="submit" class="btn-next enabled" style="width:100%;justify-content:center;padding:14px 20px;">
-            Получить расчёт и скидку
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </button>
-          <p class="quiz-privacy">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой обработки данных</a></p>
+          <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" inputmode="numeric" autocomplete="tel" required oninput="formatPhone(this)">
+          <div class="quiz-nav" style="margin-top: 0; margin-bottom: 12px;">
+            <button type="button" class="btn-back" onclick="goBack()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              Назад
+            </button>
+            <button type="submit" class="btn-next enabled" style="flex:1;justify-content:center;padding:14px 20px;">
+              Получить расчёт и скидку
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+          <p class="quiz-privacy">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой обработки данных</a> и <a href="#">офертой</a></p>
         </form>
       </div>
 
