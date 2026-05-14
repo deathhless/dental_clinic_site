@@ -710,8 +710,8 @@ section.s-dark  { background: #2c1808; color: var(--white); }
   .header-address { display: none; }
   .hamburger { display: flex; }
   .header-logo { display: none; }
-  .header-logo-img { margin-left: 0; margin-right: auto; }
-  .header-logo-img img { height: 52px; }
+  .header-logo-img { order: -1; margin-left: 0; margin-right: auto; }
+  .header-logo-img img { height: 58px; }
 
   .section-wrap { padding: 60px 24px; }
 
