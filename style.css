@@ -709,6 +709,9 @@ section.s-dark  { background: #2c1808; color: var(--white); }
   .header-phone   { display: none; }
   .header-address { display: none; }
   .hamburger { display: flex; }
+  .header-logo { display: none; }
+  .header-logo-img { margin-left: 0; margin-right: auto; }
+  .header-logo-img img { height: 52px; }
 
   .section-wrap { padding: 60px 24px; }
 
@@ -958,7 +961,6 @@ section.s-dark  { background: #2c1808; color: var(--white); }
 /* Carousel — tablet */
 @media (max-width: 960px) {
   .doc-card { flex: 0 0 calc(50% - 10px); }
-  .header-logo-img img { height: 52px; }
   .doc-nav-btn { width: 40px; height: 40px; }
   .doc-nav-btn:first-child { left: -20px; }
   .doc-nav-btn:last-child  { right: -20px; }
