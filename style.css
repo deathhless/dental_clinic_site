@@ -711,7 +711,7 @@ section.s-dark  { background: #2c1808; color: var(--white); }
   .hamburger { display: flex; }
   .header-logo { display: none; }
   .header-logo-img { order: -1; margin-left: 0; margin-right: auto; }
-  .header-logo-img img { height: 70px; }
+  .header-logo-img img { height: 87px; }
 
   .section-wrap { padding: 60px 24px; }
 
