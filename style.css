@@ -973,7 +973,7 @@ section.s-dark  { background: #2c1808; color: var(--white); }
   .doc-nav-btn { width: 34px; height: 34px; }
   .doc-nav-btn:first-child { left: -17px; }
   .doc-nav-btn:last-child  { right: -17px; }
-  .header-logo-img { display: none; }
+  .header-logo-img img { height: 44px; }
 }
 
 /* ─── SCROLL REVEAL ─── */
