@@ -29,6 +29,9 @@
     8 495 149-21-37
   </a>
   <button class="header-cta" onclick="openQuiz()">Записаться</button>
+  <a href="#home" class="header-logo-img">
+    <img src="logo.png" alt="DentaPlus логотип">
+  </a>
   <button class="hamburger" id="burgerBtn" onclick="toggleMenu()" aria-label="Меню">
     <span></span><span></span><span></span>
   </button>
@@ -255,6 +258,147 @@
       <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
       Мы подбираем врача под вашу задачу, а не «назначаем свободного»
     </div>
+
+    <!-- ── Карусель врачей ── -->
+    <div class="doc-carousel" style="margin-top:56px;">
+      <div class="doc-carousel-header">
+        <p class="doc-carousel-count" id="docCount"></p>
+      </div>
+      <div class="doc-carousel-body">
+        <button class="doc-nav-btn" id="docPrev" onclick="docSlide(-2)" aria-label="Назад">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="doc-track-outer">
+        <div class="doc-track" id="docTrack">
+
+          <div class="doc-card">
+            <div class="doc-photo"><img src="serebryakov.jpg" alt="Серебряков А.А."></div>
+            <div class="doc-info">
+              <div class="doc-name">Серебряков Андрей Анатольевич</div>
+              <div class="doc-spec">Врач-стоматолог, ортопед. Кандидат медицинских наук.</div>
+              <div class="doc-exp">Опыт работы – 31 год</div>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-photo"><img src="bobrov.jpg" alt="Бобров А.А."></div>
+            <div class="doc-info">
+              <div class="doc-name">Бобров Алексей Александрович</div>
+              <div class="doc-spec">Врач-стоматолог терапевт, стоматолог-эндодонтист</div>
+              <div class="doc-exp">Опыт работы – 32 года</div>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-photo"><img src="xurcilava.jpg" alt="Хурцилава С.Г."></div>
+            <div class="doc-info">
+              <div class="doc-name">Хурцилава Саба Гурхутиевич</div>
+              <div class="doc-spec">Врач-стоматолог, хирург, имплантолог, пародонтолог</div>
+              <div class="doc-exp">Опыт работы – 13 лет</div>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-photo"><img src="kiryuxin.jpg" alt="Кирюхин П.М."></div>
+            <div class="doc-info">
+              <div class="doc-name">Кирюхин Павел Михайлович</div>
+              <div class="doc-spec">Анестезиолог-реаниматолог</div>
+              <div class="doc-exp">Опыт работы – 14 лет</div>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-photo"><img src="kashevarova.jpg" alt="Кашеварова О.Б."></div>
+            <div class="doc-info">
+              <div class="doc-name">Кашеварова Ольга Борисовна</div>
+              <div class="doc-spec">Врач-стоматолог ортодонт</div>
+              <div class="doc-exp">Опыт работы – 7 лет</div>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-photo"><img src="kastanyo.jpg" alt="Кастаньо С.Б."></div>
+            <div class="doc-info">
+              <div class="doc-name">Кастаньо София Бернардовна</div>
+              <div class="doc-spec">Врач-стоматолог, пародонтолог</div>
+              <div class="doc-exp">Опыт работы – 7 лет</div>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-photo"><img src="prishepov.jpg" alt="Прищепов А.А."></div>
+            <div class="doc-info">
+              <div class="doc-name">Прищепов Артём Андреевич</div>
+              <div class="doc-spec">Врач-анестезиолог реаниматолог</div>
+              <div class="doc-exp">Опыт работы – 14 лет</div>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-photo"><img src="lyalyuk.jpg" alt="Лялюк А.С."></div>
+            <div class="doc-info">
+              <div class="doc-name">Лялюк Александр Сергеевич</div>
+              <div class="doc-spec">Имплантолог, стоматолог-хирург</div>
+              <div class="doc-exp">Опыт работы – 13 лет</div>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-photo"><img src="xamokov.jpg" alt="Хамоков А.А."></div>
+            <div class="doc-info">
+              <div class="doc-name">Хамоков Амир Артурович</div>
+              <div class="doc-spec">Стоматолог-гигиенист, стоматолог общей практики</div>
+              <div class="doc-exp">Опыт работы – более 3 лет</div>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-photo"><img src="lyashyenko.jpg" alt="Лященко А.А."></div>
+            <div class="doc-info">
+              <div class="doc-name">Лященко Альбина Андреевна</div>
+              <div class="doc-spec">Врач-стоматолог общей практики</div>
+              <div class="doc-exp">Опыт работы – более 3 лет</div>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-photo"><img src="lalieva.jpg" alt="Лалиева Д.Э."></div>
+            <div class="doc-info">
+              <div class="doc-name">Лалиева Диана Эдуардовна</div>
+              <div class="doc-spec">Врач-стоматолог общей практики</div>
+              <div class="doc-exp">Опыт работы – более 3 лет</div>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-photo"><img src="cibikova.jpg" alt="Цыбикова Н.А."></div>
+            <div class="doc-info">
+              <div class="doc-name">Цыбикова Надежда Арсалановна</div>
+              <div class="doc-spec">Врач-стоматолог общей практики, гигиенист</div>
+              <div class="doc-exp">Опыт работы – более 3 лет</div>
+            </div>
+          </div>
+
+          <div class="doc-card">
+            <div class="doc-photo"><img src="cherkashina.jpg" alt="Черкашина А.А."></div>
+            <div class="doc-info">
+              <div class="doc-name">Черкашина Анна Андреевна</div>
+              <div class="doc-spec">Врач-ортодонт</div>
+              <div class="doc-exp">Опыт работы – более 3 лет</div>
+            </div>
+          </div>
+
+        </div><!-- /doc-track -->
+        </div><!-- /doc-track-outer -->
+        <button class="doc-nav-btn" id="docNext" onclick="docSlide(2)" aria-label="Вперёд">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div><!-- /doc-carousel-body -->
+
+      <!-- Dots -->
+      <div class="doc-dots" id="docDots"></div>
+    </div><!-- /doc-carousel -->
+
   </div>
 </section>
 

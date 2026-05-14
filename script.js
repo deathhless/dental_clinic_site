@@ -178,3 +178,137 @@ window.addEventListener('scroll', () => {
   document.querySelector('.site-header').style.boxShadow =
     window.scrollY > 8 ? '0 2px 16px rgba(26,40,64,.12)' : '0 2px 8px rgba(26,40,64,.07)';
 });
+
+// ── Doctors Carousel ──
+let docPos = 0;
+const DOC_TOTAL = 13;
+
+function docVisible() {
+  return window.innerWidth <= 600 ? 1 : window.innerWidth <= 960 ? 2 : 4;
+}
+
+function docCardWidth() {
+  const card = document.querySelector('#docTrack .doc-card');
+  return card ? card.offsetWidth + 20 : 0;
+}
+
+function docGoTo(pos, animate = true) {
+  const vis = docVisible();
+  docPos = Math.max(0, Math.min(pos, DOC_TOTAL - vis));
+  const track = document.getElementById('docTrack');
+  if (!track) return;
+  const offset = docPos * docCardWidth();
+  track.style.transition = animate
+    ? 'transform .6s cubic-bezier(.16,1,.3,1)'
+    : 'none';
+  track.style.transform = `translateX(-${offset}px)`;
+  updateDocUI();
+}
+
+function docSlide(dir) { docGoTo(docPos + dir); }
+
+function updateDocUI() {
+  const vis = docVisible();
+  const countEl = document.getElementById('docCount');
+  if (countEl) countEl.textContent = `${docPos + 1}–${Math.min(docPos + vis, DOC_TOTAL)} из ${DOC_TOTAL}`;
+  const prev = document.getElementById('docPrev');
+  const next = document.getElementById('docNext');
+  if (prev) prev.disabled = docPos === 0;
+  if (next) next.disabled = docPos >= DOC_TOTAL - vis;
+  document.querySelectorAll('.doc-dot').forEach((d, i) =>
+    d.classList.toggle('active', i === docPos)
+  );
+}
+
+function initDocCarousel() {
+  const dotsEl = document.getElementById('docDots');
+  if (!dotsEl) return;
+  const vis = docVisible();
+  dotsEl.innerHTML = '';
+  for (let i = 0; i < DOC_TOTAL - vis + 1; i++) {
+    const d = document.createElement('button');
+    d.className = 'doc-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', `Слайд ${i + 1}`);
+    d.addEventListener('click', () => docGoTo(i));
+    dotsEl.appendChild(d);
+  }
+  updateDocUI();
+}
+
+// 3-D tilt on hover
+function initDocTilt() {
+  document.querySelectorAll('.doc-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width  - 0.5;
+      const y = (e.clientY - r.top)  / r.height - 0.5;
+      card.style.transform =
+        `perspective(700px) translateY(-10px) rotateX(${-y * 7}deg) rotateY(${x * 9}deg) scale(1.03)`;
+      card.style.boxShadow =
+        `${x * -12}px ${14 + y * -8}px 48px rgba(44,24,8,.22)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      card.style.boxShadow = '';
+    });
+  });
+}
+
+// Mouse-drag to swipe
+function initDocDrag() {
+  const outer = document.querySelector('.doc-track-outer');
+  const track = document.getElementById('docTrack');
+  if (!outer || !track) return;
+
+  let dragging = false, startX = 0, startOffset = 0, moved = 0;
+
+  outer.style.cursor = 'grab';
+
+  outer.addEventListener('mousedown', e => {
+    dragging = true; moved = 0;
+    startX = e.clientX;
+    startOffset = docPos * docCardWidth();
+    outer.style.cursor = 'grabbing';
+    track.style.transition = 'none';
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    moved = startX - e.clientX;
+    track.style.transform = `translateX(-${startOffset + moved}px)`;
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (!dragging) return;
+    dragging = false;
+    outer.style.cursor = 'grab';
+    if      (moved >  70) docGoTo(docPos + 1);
+    else if (moved < -70) docGoTo(docPos - 1);
+    else                  docGoTo(docPos);
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  initDocCarousel();
+  initDocTilt();
+  initDocDrag();
+
+  // Touch / swipe
+  const outer = document.querySelector('.doc-track-outer');
+  if (outer) {
+    let touchX = 0;
+    outer.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+    outer.addEventListener('touchend', e => {
+      const diff = touchX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) docSlide(diff > 0 ? 1 : -1);
+    }, { passive: true });
+  }
+});
+
+window.addEventListener('resize', () => {
+  const track = document.getElementById('docTrack');
+  if (track) { track.style.transition = 'none'; track.style.transform = 'translateX(0)'; }
+  docPos = 0;
+  initDocCarousel();
+});
