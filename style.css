@@ -673,10 +673,8 @@ section.s-dark  { background: #2c1808; color: var(--white); }
 }
 .mobile-nav-close:hover { background: var(--bg-alt); }
 .mobile-nav-logo {
-  font-size: 1.2rem; font-weight: 900; color: var(--text);
-  margin-bottom: 24px; letter-spacing: -.02em;
+  margin-bottom: 24px;
 }
-.mobile-nav-logo span { color: var(--blue); }
 .mobile-nav a {
   font-size: 1rem; font-weight: 600; color: var(--text);
   padding: 13px 0; border-bottom: 1px solid var(--border-l);
