@@ -1,3 +1,7 @@
+// ═══ CF7 INTEGRATION ═══
+const CF7_ENDPOINT = 'https://blancodentalclinic.ru/wp-json/contact-form-7/v1/contact-forms/13877/feedback';
+const RECAPTCHA_SITE_KEY = '6LdyEtEZAAAAAPEMyXt6Otb34LmeF7sG9zbcvwuK';
+
 // ── Quiz state ──
 let cur = 1;
 const ans = {};
@@ -98,10 +102,55 @@ function submitPromo(e) {
     '<p style="color:rgba(255,255,255,.55)">Перезвоним в течение 5 минут</p></div>';
 }
 
-// ── Send lead (replace with your CRM endpoint) ──
-function sendLead(data) {
-  console.log('Lead:', data);
-  // fetch('/api/lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) });
+// ── reCAPTCHA token ──
+function getRecaptchaToken() {
+  return new Promise((resolve, reject) => {
+    if (typeof grecaptcha === 'undefined') {
+      return reject(new Error('reCAPTCHA не загружена'));
+    }
+    grecaptcha.ready(() => {
+      grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'submit' }).then(resolve).catch(reject);
+    });
+  });
+}
+
+// ── Send lead to Contact Form 7 ──
+async function sendLead(data) {
+  try {
+    const token = await getRecaptchaToken();
+
+    const form = new FormData();
+    form.append('_wpcf7', '13877');
+    form.append('_wpcf7_version', '6.0.5');
+    form.append('_wpcf7_locale', 'ru_RU');
+    form.append('_wpcf7_unit_tag', 'wpcf7-f13877-p13471-o1');
+    form.append('_wpcf7_container_post', '13471');
+    form.append('_wpcf7_posted_data_hash', '');
+    form.append('_wpcf7_recaptcha_response', token);
+
+    form.append('oz-name', data.name || '');
+    form.append('oz-surname', '');
+    form.append('oz-phone', data.phone || '');
+    form.append('oz-email', '');
+    form.append('doctor', '');
+
+    let msg = 'Источник: ' + (data.source === 'quiz' ? 'Квиз с лендинга boco.blancodentalclinic.ru' : 'Промо-форма с лендинга boco.blancodentalclinic.ru') + '\n';
+    if (data.q1) msg += 'Что беспокоит: ' + data.q1 + '\n';
+    if (data.q2) msg += 'Количество зубов: ' + data.q2 + '\n';
+    if (data.q3) msg += 'Когда начать: ' + data.q3 + '\n';
+    if (data.q4) msg += 'Важность стоимости: ' + data.q4 + '\n';
+    form.append('message', msg);
+
+    const res = await fetch(CF7_ENDPOINT, { method: 'POST', body: form, credentials: 'omit' });
+    const result = await res.json();
+    console.log('CF7 response:', result);
+
+    if (result.status !== 'mail_sent') {
+      console.warn('CF7 не приняла заявку:', result.status, result.message);
+    }
+  } catch (err) {
+    console.error('Ошибка отправки лида:', err);
+  }
 }
 
 // ── FAQ ──
