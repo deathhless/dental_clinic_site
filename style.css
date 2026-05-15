@@ -844,7 +844,7 @@ section.s-dark  { background: #2c1808; color: var(--white); }
   order: -1; margin-right: auto;
 }
 .header-logo-img img {
-  height: 56px; width: auto; border-radius: var(--r);
+  height: 124px; width: auto; border-radius: var(--r);
   object-fit: contain;
   mix-blend-mode: multiply;
 }
